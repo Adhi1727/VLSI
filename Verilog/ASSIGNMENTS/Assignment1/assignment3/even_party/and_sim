@@ -1,0 +1,42 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5ac4b14e1650 .scope module, "tb_even_parity_9bit" "tb_even_parity_9bit" 2 1;
+ .timescale 0 0;
+v0x5ac4b14f1f40_0 .net "ep", 0 0, L_0x5ac4b14f21e0;  1 drivers
+v0x5ac4b14f2010_0 .net "op", 0 0, L_0x5ac4b14f2320;  1 drivers
+v0x5ac4b14f20e0_0 .var "x", 8 0;
+S_0x5ac4b14e17e0 .scope module, "dut" "even_parity_9bit" 2 6, 3 1 0, S_0x5ac4b14e1650;
+ .timescale 0 0;
+    .port_info 0 /INPUT 9 "x";
+    .port_info 1 /OUTPUT 1 "ep";
+    .port_info 2 /OUTPUT 1 "op";
+L_0x5ac4b14f2320 .functor NOT 1, L_0x5ac4b14f21e0, C4<0>, C4<0>, C4<0>;
+v0x5ac4b14e1a10_0 .net "ep", 0 0, L_0x5ac4b14f21e0;  alias, 1 drivers
+v0x5ac4b14f1d40_0 .net "op", 0 0, L_0x5ac4b14f2320;  alias, 1 drivers
+v0x5ac4b14f1e00_0 .net "x", 8 0, v0x5ac4b14f20e0_0;  1 drivers
+L_0x5ac4b14f21e0 .reduce/xor v0x5ac4b14f20e0_0;
+    .scope S_0x5ac4b14e1650;
+T_0 ;
+    %vpi_call 2 10 "$monitor", "x=%b ep=%b op=%b ", v0x5ac4b14f20e0_0, v0x5ac4b14f1f40_0, v0x5ac4b14f2010_0 {0 0 0};
+    %pushi/vec4 340, 0, 9;
+    %store/vec4 v0x5ac4b14f20e0_0, 0, 9;
+    %delay 10, 0;
+    %pushi/vec4 171, 0, 9;
+    %store/vec4 v0x5ac4b14f20e0_0, 0, 9;
+    %delay 10, 0;
+    %vpi_call 2 14 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_even_parity_9bit";
+    "even_parity_9bit";

@@ -1,0 +1,59 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5f4dece19b60 .scope module, "tb_caseequality" "tb_caseequality" 2 1;
+ .timescale 0 0;
+v0x5f4dece2c750_0 .var "a", 3 0;
+v0x5f4dece2c810_0 .var "b", 3 0;
+v0x5f4dece2c8e0_0 .net "y", 1 0, L_0x5f4dece2cb50;  1 drivers
+S_0x5f4dece19cf0 .scope module, "dut" "caseequality" 2 5, 3 1 0, S_0x5f4dece19b60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 2 "y";
+v0x5f4dece05f50_0 .net *"_ivl_2", 0 0, L_0x5f4dece2c9e0;  1 drivers
+v0x5f4dece058f0_0 .net *"_ivl_7", 0 0, L_0x5f4dece2cc90;  1 drivers
+v0x5f4dece2c400_0 .net "a", 3 0, v0x5f4dece2c750_0;  1 drivers
+v0x5f4dece2c4c0_0 .net "b", 3 0, v0x5f4dece2c810_0;  1 drivers
+v0x5f4dece2c5a0_0 .net "y", 1 0, L_0x5f4dece2cb50;  alias, 1 drivers
+L_0x5f4dece2c9e0 .cmp/eq 4, v0x5f4dece2c750_0, v0x5f4dece2c810_0;
+L_0x5f4dece2cb50 .concat8 [ 1 1 0 0], L_0x5f4dece2c9e0, L_0x5f4dece2cc90;
+L_0x5f4dece2cc90 .cmp/eeq 4, v0x5f4dece2c750_0, v0x5f4dece2c810_0;
+    .scope S_0x5f4dece19b60;
+T_0 ;
+    %vpi_call 2 9 "$monitor", "a=%b b=%b logical=%b case=%b", v0x5f4dece2c750_0, v0x5f4dece2c810_0, &PV<v0x5f4dece2c8e0_0, 0, 1>, &PV<v0x5f4dece2c8e0_0, 1, 1> {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x5f4dece2c750_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x5f4dece2c810_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 8, 0, 4;
+    %store/vec4 v0x5f4dece2c750_0, 0, 4;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x5f4dece2c810_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 14, 5, 4;
+    %store/vec4 v0x5f4dece2c750_0, 0, 4;
+    %pushi/vec4 14, 5, 4;
+    %store/vec4 v0x5f4dece2c810_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 5, 1, 4;
+    %store/vec4 v0x5f4dece2c750_0, 0, 4;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x5f4dece2c810_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 16 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_caseequality.v";
+    "caseequality.v";

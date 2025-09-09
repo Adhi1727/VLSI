@@ -1,0 +1,49 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x644ada0fee60 .scope module, "tb_shift" "tb_shift" 2 1;
+ .timescale 0 0;
+v0x644ada110930_0 .var "a", 3 0;
+v0x644ada110a10_0 .var "b", 1 0;
+v0x644ada110ae0_0 .net "x", 3 0, L_0x644ada110cb0;  1 drivers
+v0x644ada110be0_0 .net "y", 3 0, L_0x644ada110e40;  1 drivers
+S_0x644ada0feff0 .scope module, "dut" "shift" 2 6, 3 1 0, S_0x644ada0fee60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 2 "b";
+    .port_info 2 /OUTPUT 4 "x";
+    .port_info 3 /OUTPUT 4 "y";
+v0x644ada0ff240_0 .net "a", 3 0, v0x644ada110930_0;  1 drivers
+v0x644ada110630_0 .net "b", 1 0, v0x644ada110a10_0;  1 drivers
+v0x644ada110710_0 .net "x", 3 0, L_0x644ada110cb0;  alias, 1 drivers
+v0x644ada1107d0_0 .net "y", 3 0, L_0x644ada110e40;  alias, 1 drivers
+L_0x644ada110cb0 .shift/l 4, v0x644ada110930_0, v0x644ada110a10_0;
+L_0x644ada110e40 .shift/r 4, v0x644ada110930_0, v0x644ada110a10_0;
+    .scope S_0x644ada0fee60;
+T_0 ;
+    %vpi_call 2 8 "$monitor", "a=%b b=%b leftshift=%b rightshift=%b ", v0x644ada110930_0, v0x644ada110a10_0, v0x644ada110ae0_0, v0x644ada110be0_0 {0 0 0};
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x644ada110930_0, 0, 4;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x644ada110a10_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0x644ada110930_0, 0, 4;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x644ada110a10_0, 0, 2;
+    %delay 10, 0;
+    %vpi_call 2 13 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_shift.v";
+    "shift.v";
