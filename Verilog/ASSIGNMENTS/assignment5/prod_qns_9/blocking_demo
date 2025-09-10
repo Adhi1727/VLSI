@@ -1,0 +1,11 @@
+module blocking_demo(
+output reg [7:0] x,y
+);
+
+	initial begin
+	x=8'd5;
+	y= x+8'd3;
+	$display("time=%4t after blocking | x=%b y=%b",$time,x,y);
+	#10 $finish;
+	end
+endmodule
