@@ -1,0 +1,23 @@
+module loop_simple;
+reg a,b,c;
+integer i;
+
+	initial begin
+	for(i=0;i<3;i=i+1) #5 a=~a;
+	end
+
+	initial begin
+	repeat (4) #5 b=~b;
+	end
+
+	initial begin
+	forever #5 c=~c;
+	end
+
+	initial begin
+        $dumpfile("loop_simple.vcd");
+        $dumpvars(0, loop_simple);
+	$display("time=%0t,a=%b,b=%b,c=%b",i,$time,a,b,c);
+	#40 $finish;
+	end
+endmodule

@@ -1,0 +1,33 @@
+$date
+	Thu Sep 11 13:27:33 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module loop_simple $end
+$var reg 1 ! a $end
+$var reg 1 " b $end
+$var reg 1 # c $end
+$var integer 32 $ i [31:0] $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 $
+x#
+x"
+x!
+$end
+#5
+b1 $
+#10
+b10 $
+#15
+b11 $
+#40
