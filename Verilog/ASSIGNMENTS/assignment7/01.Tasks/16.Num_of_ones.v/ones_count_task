@@ -1,0 +1,21 @@
+module count_ones_task;
+reg [7:0] data;
+integer count;
+
+	task count_one;
+	input [7:0] x;
+	output integer c;
+	integer i;
+	begin
+	 c=0;
+	 for(i=0;i<8;i=i+1)
+	    c=c+x[i];
+	end
+	endtask
+
+	initial begin
+	data=8'b11001010;
+	count_one(data,count);
+	$display("input=%b,ones=%0d",data,count);
+	end
+endmodule
