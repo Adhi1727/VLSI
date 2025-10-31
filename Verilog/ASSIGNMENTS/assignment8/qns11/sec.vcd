@@ -1,0 +1,112 @@
+$date
+	Fri Oct 31 08:47:51 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_state2_in2 $end
+$var wire 1 ! out $end
+$var reg 1 " clk $end
+$var reg 1 # j $end
+$var reg 1 $ k $end
+$var reg 1 % rst $end
+$scope module uut $end
+$var wire 1 " clk $end
+$var wire 1 # j $end
+$var wire 1 $ k $end
+$var wire 1 % rst $end
+$var parameter 32 & OFF $end
+$var parameter 32 ' ON $end
+$var reg 2 ( next_state [1:0] $end
+$var reg 1 ! out $end
+$var reg 2 ) state [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1 '
+b0 &
+$end
+#0
+$dumpvars
+b0 )
+b0 (
+1%
+0$
+0#
+0"
+0!
+$end
+#5
+1"
+#10
+0"
+0%
+#15
+1"
+#20
+b1 (
+0"
+1#
+#25
+1!
+b1 )
+1"
+#30
+0"
+0#
+#35
+1"
+#40
+0"
+#45
+1"
+#50
+b0 (
+0"
+1$
+#55
+0!
+b0 )
+1"
+#60
+0"
+0$
+#65
+1"
+#70
+b1 (
+0"
+1#
+#75
+1!
+b1 )
+1"
+#80
+0"
+0#
+#85
+1"
+#90
+b0 (
+0"
+1$
+#95
+0!
+b0 )
+1"
+#100
+0"
+0$
+#105
+1"
+#110
+0"
+#115
+1"
+#120
+0"
